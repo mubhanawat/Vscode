@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <table >
+  
+    <tr *ngFor="let c of commentsArr">
+      <td>{{c.postId}} </td>
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.body}}</td>
+    </tr>
+  </table> -->
+  <form (ngSubmit)='fetch()'>
+  <input name="id" [(ngModel)]='id' />
+  <button name="submit" >submit</button>
+</form>
+  <table  *ngIf='comm?.length' >
+  <tr *ngFor="let c of comm">
+    <td>{{c.userId}} </td>
+    <td>{{c.id}}</td>
+    <td>{{c.title}}</td>
+    <td>{{c.body}}</td>
+  </tr>
+</table> 
+<p *ngIf='!comm?.length'>No Data Found</p> 
+<p>userid:{{returnPost?.userId}}</p>
+<p>id:{{returnPost?.id}}</p>
+<p>title:{{returnPost?.title}}</p>
+<p>body:{{returnPost?.body}}</p>
+</body>
+</html>
